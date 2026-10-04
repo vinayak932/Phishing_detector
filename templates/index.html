@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="badge">
+            AI-POWERED URL ANALYSIS
+        </div>
+
+        <h1>PhishGuard</h1>
+
+        <p class="subtitle">
+            Detect potentially malicious URLs using machine learning.
+        </p>
+
+        <form method="POST" class="url-form">
+
+            <input
+                type="text"
+                name="url"
+                placeholder="https://example.com"
+                required
+            >
+
+            <button type="submit">
+                Analyze URL
+            </button>
+
+        </form>
+
+        {% if result %}
+
+        <div class="result">
+
+            <h2>{{ result.label }}</h2>
+
+            <p>
+                Model confidence:
+                <strong>
+                    {{ "%.2f"|format(result.probability) }}%
+                </strong>
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <p class="disclaimer">
+            This tool provides a machine-learning based assessment
+            and should not be treated as definitive proof that a URL
+            is safe or malicious.
+        </p>
+
+    </main>
+
+</body>
+</html>

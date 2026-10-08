@@ -1,4 +1,4 @@
-Sure — I'll give you the **entire README as one copyable text block** so you can paste it directly into `README.md`.
+
 
 ```markdown
 # 🛡️ Phishing URL Detector — V1
